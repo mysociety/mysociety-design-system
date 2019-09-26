@@ -1,0 +1,68 @@
+$font-family-base: "Museo Sans", "Helmet", "Freesans", sans-serif;
+
+@import "../src/mysociety";
+
+.demo-extra-fieldset {
+    padding: 1.5em 1.5em 0.5em 1.5em;
+    margin: 1em 0;
+
+    header {
+        display: flex;
+        margin: -1.5em -1.5em 1.5em -1.5em;
+
+        & > * {
+            display: block;
+            background: transparent;
+            border: none;
+            color: inherit;
+            font-size: 1em;
+            line-height: inherit;
+            padding: 1em;
+            border-bottom: 2px solid #ccc;
+        }
+
+        & > * + * {
+            border-left: 2px solid #ccc;
+        }
+
+        div {
+            flex: 1 0 auto;
+        }
+
+        button {
+            &:hover {
+                background-color: #eee;
+            }
+        }
+    }
+
+    &.collapsed {
+        padding: 0;
+
+        header {
+            margin: 0;
+
+            & > * {
+                border-bottom: none;
+            }
+        }
+
+        header ~ * {
+            display: none;
+        }
+    }
+}
+
+.demo-drag-handle {
+    cursor: grab;
+
+    &:before {
+        content: "";
+        display: inline-block;
+        width: 1em;
+        height: 2px;
+        background: #000;
+        box-shadow: 0 -4px 0 #000, 0 4px 0 #000;
+        vertical-align: 25%;
+    }
+}

@@ -1,0 +1,57 @@
+.my-button {
+    display: inline-block;
+    padding: $button-padding;
+    font-size: 1em;
+    line-height: 1;
+    border-radius: $button-border-radius;
+    background: $button-default-background;
+    border: $button-default-border;
+    color: $button-default-color;
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: $button-margin-bottom;
+
+    &:hover {
+        background: $button-default-hover-background;
+        border: $button-default-hover-border;
+        color: $button-default-hover-color;
+    }
+}
+
+.my-button-primary {
+    background: $button-primary-background;
+    border: $button-primary-border;
+    color: $button-primary-color;
+
+    &:hover {
+        background: $button-primary-hover-background;
+        border: $button-primary-hover-border;
+        color: $button-primary-hover-color;
+    }
+}
+
+.my-button-destructive {
+    background: $button-destructive-background;
+    border: $button-destructive-border;
+    color: $button-destructive-color;
+
+    &:hover {
+        background: $button-destructive-hover-background;
+        border: $button-destructive-hover-border;
+        color: $button-destructive-hover-color;
+    }
+}
+
+// Defined last, so it takes precedence over button colour variants.
+.my-button {
+    &:focus {
+        background: $button-focus-background;
+        border: $button-focus-border;
+        color: $button-focus-color;
+        outline: none;
+    }
+}
+
+.my-button-sm {
+    font-size: 0.75em;
+}

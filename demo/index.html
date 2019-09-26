@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandHeldFriendly" content="true">
+    <meta name="mobileoptimized" content="0">
+    <title>mySociety Design System Demo</title>
+    <link rel="stylesheet" href="demo.css">
+</head>
+<body class="my-body">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    <form class="my-form my-container">
+        <fieldset class="my-fieldset">
+            <legend class="my-h1">Abandoned vehicles</legend>
+
+            <p class="my-form-group">
+                <label class="my-form-label" for="email">Email address</label>
+                <input type="email" class="my-form-control" id="email">
+            </p>
+
+            <p class="my-form-group">
+                <label class="my-form-label" for="state">State</label>
+                <select class="my-select" id="state">
+                    <option>Unconfirmed</option>
+                    <option>Confirmed</option>
+                    <option>Inactive</option>
+                    <option>Deleted</option>
+                </select>
+            </p>
+
+            <div class="my-form-group">
+                <p class="my-form-check">
+                    <input class="my-checkbox" type="checkbox" id="private" aria-describedby="private-hint">
+                    <label class="my-form-label" for="private">Hide reports in this category</label>
+                    <span class="my-form-hint" id="private-hint">Use this for issues that you want to allow users to report, but for which there is no public interest in displaying the report, like extra rubbish bin collections.</span>
+                </p>
+
+                <p class="my-form-check">
+                    <input class="my-checkbox" type="checkbox" id="inspection">
+                    <label class="my-form-label" for="inspection">Reports in this category must be inspected before being sent</label>
+                </p>
+
+                <p class="my-form-check">
+                    <input class="my-checkbox" type="checkbox" id="disable">
+                    <label class="my-form-label" for="disable">Disable form when this category is selected</label>
+                </p>
+
+                <p class="my-form-group js-hidden js-hidden-until-previous-checkbox-checked">
+                    <label class="my-form-label" for="disabled-message">Message to show when form is disabled</label>
+                    <textarea class="my-form-control" id="disabled-message"></textarea>
+                </p>
+            </div>
+
+            <fieldset class="my-fieldset">
+                <legend class="my-form-label">Parent categories</legend>
+                <p style="margin-top:0;">
+                    <label class="my-visually-hidden" for="parent-category-1">Category 1</label>
+                    <input class="my-form-control" type="text" id="parent-category-1">
+                </p>
+                <button class="my-button my-button-sm" type="button">Add another parent category</button>
+            </fieldset>
+
+            <h2 class="my-form-label" style="margin-top: 2em">Extra fields</h2>
+
+            <fieldset class="my-fieldset my-card demo-extra-fieldset collapsed">
+                <header>
+                    <button type="button" class="demo-drag-handle"><span class="my-visually-hidden">Drag</span></button>
+                    <div>Code / Behaviour / Description</div>
+                    <button type="button">Edit</button>
+                    <button type="button">Remove</button>
+                </header>
+            </fieldset>
+
+            <fieldset class="my-fieldset my-card demo-extra-fieldset collapsed">
+                <header>
+                    <button type="button" class="demo-drag-handle"><span class="my-visually-hidden">Drag</span></button>
+                    <div>Code / Behaviour / Description</div>
+                    <button type="button">Edit</button>
+                    <button type="button">Remove</button>
+                </header>
+            </fieldset>
+
+            <fieldset class="my-fieldset my-card demo-extra-fieldset">
+                <legend class="my-visually-hidden">Extra field 1</legend>
+
+                <header>
+                    <button type="button" class="demo-drag-handle"><span class="my-visually-hidden">Drag</span></button>
+                    <div>Code / Behaviour / Description</div>
+                    <button type="button">Done editing</button>
+                    <button type="button">Remove</button>
+                </header>
+
+                <p class="my-form-group">
+                    <label class="my-form-label" for="metadata[1].code">Code</label>
+                    <span class="my-form-hint" id="metadata[1].code-hint">The code used to store this field value in the database.</span>
+                    <input class="my-form-control" id="metadata[1].code" type="text" aria-describedby="metadata[1].code-hint">
+                </p>
+
+                <fieldset class="my-fieldset js-behaviour-choice">
+                    <legend class="my-form-label">Behaviour</legend>
+                    <div class="my-form-group">
+                        <p class="my-form-check">
+                            <input class="my-radio" type="radio" name="metadata[1].behaviour" id="metadata[1].behaviour.question" value="question">
+                            <label class="my-form-label" for="metadata[1].behaviour.question">Extra question shown to user</label>
+                        </p>
+                        <p class="my-form-check">
+                            <input class="my-radio" type="radio" name="metadata[1].behaviour" id="metadata[1].behaviour.notice" value="notice">
+                            <label class="my-form-label" for="metadata[1].behaviour.notice">Notice shown to user</label>
+                        </p>
+                        <p class="my-form-check">
+                            <input class="my-radio" type="radio" name="metadata[1].behaviour" id="metadata[1].behaviour.hidden" value="hidden">
+                            <label class="my-form-label" for="metadata[1].behaviour.hidden">Hidden data in reporting form</label>
+                        </p>
+                        <p class="my-form-check">
+                            <input class="my-radio" type="radio" name="metadata[1].behaviour" id="metadata[1].behaviour.server" value="server">
+                            <label class="my-form-label" for="metadata[1].behaviour.server">Internal data set by Open311</label>
+                        </p>
+                    </div>
+                </fieldset>
+
+                <p class="my-form-group js-hidden js-description">
+                    <label class="my-form-label" for="metadata[1].description">Question text</label>
+                    <textarea class="my-form-control" id="metadata[1].description" rows="3"></textarea>
+                </p>
+
+                <p class="my-form-group js-hidden js-notice">
+                    <label class="my-form-label" for="metadata[1].description">Notice text</label>
+                    <textarea class="my-form-control" id="metadata[1].description" rows="3"></textarea>
+                </p>
+
+                <p class="my-form-group js-hidden js-datatype">
+                    <label class="my-form-label" for="metadata[1].datatype">Display as</label>
+                    <select class="my-select" id="metadata[1].datatype">
+                        <option value="string">Text field</option>
+                        <option value="list">Drop down list</option>
+                    </select>
+                </p>
+
+                <div class="js-hidden js-datatype-list" style="margin-bottom: 2em">
+                    <h3 class="my-form-label">Drop down responses</h3>
+
+                    <fieldset class="my-fieldset my-card demo-extra-fieldset">
+                        <legend class="my-visually-hidden">Response 1</legend>
+
+                        <header>
+                            <button type="button" class="demo-drag-handle"><span class="my-visually-hidden">Drag</span></button>
+                            <div>Key / Label</div>
+                            <button type="button">Edit</button>
+                            <button type="button">Remove</button>
+                        </header>
+
+                        <div style="display: flex; margin: -1em;">
+                            <p class="my-form-group" style="flex: 1 1 auto; margin-right: 1em; margin-left: 1em;">
+                                <label class="my-form-label" for="metadata[1].values[1].key">Internal key</label>
+                                <input class="my-form-control" type="text" id="metadata[1].values[1].key">
+                            </p>
+                            <p class="my-form-group" style="flex: 1 1 auto; margin-right: 1em; margin-left: 1em;">
+                                <label class="my-form-label" for="metadata[1].values[1].name">Displayed label</label>
+                                <input class="my-form-control" type="text" id="metadata[1].values[1].name">
+                            </p>
+                        </div>
+
+                        <p class="my-form-check">
+                            <input class="my-checkbox" type="checkbox" id="metadata[1].values[1].disable">
+                            <label class="my-form-label" for="metadata[1].values[1].disable">Disable form when this response selected</label>
+                        </p>
+
+                        <p class="my-form-group js-hidden js-hidden-until-previous-checkbox-checked">
+                            <label class="my-form-label" for="metadata[1].values[1].disabled-message">Message to show when form is disabled</label>
+                            <textarea class="my-form-control" id="metadata[1].values[1].disabled-message"></textarea>
+                        </p>
+                    </fieldset>
+
+                    <button type="button" class="my-button my-button-sm">Add another item</button>
+                </div>
+
+                <p class="my-form-check my-form-group js-hidden js-required">
+                    <input class="my-checkbox" type="checkbox" id="metadata[1].required" aria-describedby="metadata[1].required-hint">
+                    <label class="my-form-label" for="metadata[1].required">Required</label>
+                    <span class="my-form-hint" id="metadata[1].required-hint">Prevent user from submitting the form until this field is filled in.</span>
+                </p>
+
+                <p class="my-form-check my-form-group js-hidden js-protected">
+                    <input class="my-checkbox" type="checkbox" id="metadata[1].protected" aria-describedby="metadata[1].protected-hint">
+                    <label class="my-form-label" for="metadata[1].protected">Protect from Open311 changes</label>
+                    <span class="my-form-hint" id="metadata[1].protected-hint">If ticked this extra data will not be edited or deleted by the Open311 population script.</span>
+                </p>
+
+                <p class="my-form-group js-hidden">
+                    <label class="my-form-label" for="metadata[1].order">Order</label>
+                    <input class="my-form-control" id="metadata[1].order" type="text">
+                </p>
+            </fieldset>
+
+            <button type="button" class="my-button my-button-sm">Add another field</button>
+
+        </fieldset>
+
+        <p class="my-form-group">
+            <label class="my-form-label" for="note">Summarise your changes</label>
+            <span class="my-form-hint" id="note-hint">If you’ve made changes, leave a note explaining what, for other admins to see.</span>
+            <input class="my-form-control" id="note" aria-describedby="note-hint" type="text">
+        </p>
+
+        <button type="submit" class="my-button my-button-primary">Save changes</button>
+
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./demo.js"></script>
+</body>
+</html>

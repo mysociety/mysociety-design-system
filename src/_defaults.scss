@@ -1,0 +1,60 @@
+$button-border-radius: 4px !default;
+$button-padding: 0.75em 1em !default;
+$button-margin-bottom: 10px !default; // TODO: Global spacing scale.
+
+$button-default-background: #eee !default;
+$button-default-border: none !default;
+$button-default-color: #000 !default;
+
+$button-default-hover-background: darken($button-default-background, 5%) !default;
+$button-default-hover-border: none !default;
+$button-default-hover-color: $button-default-color !default;
+
+$button-primary-background: #4faded !default;
+$button-primary-border: none !default;
+$button-primary-color: #fff !default;
+
+$button-primary-hover-background: darken($button-primary-background, 5%) !default;;
+$button-primary-hover-border: none !default;
+$button-primary-hover-color: $button-primary-color !default;
+
+$button-destructive-background: #E04B4B !default;
+$button-destructive-border: none !default;
+$button-destructive-color: #fff !default;
+
+$button-destructive-hover-background: darken($button-destructive-background, 5%) !default;;
+$button-destructive-hover-border: none !default;
+$button-destructive-hover-color: $button-primary-color !default;
+
+$button-focus-background: #ffdd00 !default;
+$button-focus-border: none !default;
+$button-focus-color: #000 !default;
+
+$card-background: #fff !default;
+$card-border-color: #ccc !default;
+$card-border-width: 2px !default;
+$card-border: $card-border-width solid $card-border-color !default;
+$card-border-radius: 4px !default;
+$card-box-shadow: 0 4px 4px 0 rgba(#000, 0.05) !default;
+
+$font-family-base: sans-serif !default;
+$font-size-base: 16px;
+
+$form-control-background: #fff !default;
+$form-control-border: 2px solid #6F777B !default;
+$form-control-border-radius: 4px !default;
+$form-control-color: #000 !default;
+$form-control-height: 40px !default;
+$form-control-padding: 5px 10px !default;
+
+$form-control-focus-border-color: #000 !default;
+$form-control-focus-box-shadow: 0 0 0 2px #ffdd00 !default;
+
+$form-group-margin-bottom: 30px !default; // TODO: Global spacing scale.
+
+$form-hint-margin-bottom: 10px !default; // TODO: Global spacing scale.
+$form-hint-color: #6F777B !default;
+
+$form-label-margin-bottom: 5px !default; // TODO: Global spacing scale.
+
+$line-height-base: 1.25;

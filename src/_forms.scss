@@ -1,0 +1,157 @@
+.my-fieldset {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.my-form-group {
+    margin-bottom: $form-group-margin-bottom;
+}
+
+.my-form-control,
+.my-select {
+    font-family: inherit;
+    font-size: 1em;
+    line-height: inherit;
+    width: 100%;
+    height: $form-control-height;
+    padding: $form-control-padding;
+    border: $form-control-border;
+    border-radius: $form-control-border-radius;
+    background-color: $form-control-background;
+    color: $form-control-color;
+
+    &:focus {
+        border-color: $form-control-focus-border-color;
+        box-shadow: $form-control-focus-box-shadow;
+    }
+}
+
+.my-form-control {
+    @include appearance(none);
+}
+
+// TODO: We have .my-select, .my-checkbox, etc, so should this be .my-textarea?
+textarea.my-form-control {
+    height: auto;
+    max-width: 100%;
+}
+
+.my-select {
+    max-width: 100%;
+}
+
+.my-form-label {
+    display: block;
+    margin: 0;
+    font-size: 1em;
+    font-weight: normal;
+    margin-bottom: $form-label-margin-bottom;
+}
+
+.my-form-hint {
+    display: block;
+    margin-bottom: $form-hint-margin-bottom;
+    color: $form-hint-color;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+// TODO: Make clear how this should be used with / without .my-form-group
+.my-form-check {
+    position: relative;
+    padding-left: 2.75em;
+
+    // TODO: Should checkboxes and radios be styled when they’re _outside_ .my-form-check?
+    .my-checkbox,
+    .my-radio {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+        font-size: 1em;
+        width: 2em;
+        height: 2em;
+        margin: 0;
+        opacity: 0;
+    }
+
+    .my-form-label {
+        $form-label-vertical-padding: (2em - (1em * $line-height-base)) / 2;
+        padding: $form-label-vertical-padding 0;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 2em;
+            height: 2em;
+            border: $form-control-border;
+            background: $form-control-background;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            opacity: 0;
+        }
+
+        & + .my-form-hint {
+            margin-top: $form-label-vertical-padding * -1;
+        }
+    }
+
+    .my-checkbox + .my-form-label {
+        &:before {
+            border-radius: $form-control-border-radius;
+        }
+
+        &:after {
+            top: 0.55em;
+            left: 0.45em;
+            width: 1.1em;
+            height: 0.6em;
+            @include transform(rotate(-45deg)); // TODO: Just replace all this cleverness with an SVG background image?
+            border-style: solid;
+            border-color: transparent $form-control-color $form-control-color $form-control-color;
+            border-width: 0 0 0.3em 0.3em;
+            background: transparent;
+        }
+    }
+
+    .my-radio + .my-form-label {
+        &:before {
+            border-radius: 50%;
+        }
+
+        &:after {
+            top: 0.5em;
+            left: 0.5em;
+            width: 0;
+            height: 0;
+            border: 0.5em solid currentColor;
+            border-radius: 50%;
+            background: currentColor;
+        }
+    }
+
+    .my-checkbox:focus + .my-form-label,
+    .my-radio:focus + .my-form-label {
+        &:before {
+            border-color: $form-control-focus-border-color;
+            box-shadow: $form-control-focus-box-shadow;
+        }
+    }
+
+    .my-checkbox:checked + .my-form-label,
+    .my-radio:checked + .my-form-label {
+        &:after {
+            opacity: 1;
+        }
+    }
+}
